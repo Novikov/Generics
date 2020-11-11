@@ -5,7 +5,7 @@ import java_pecs.Phone
 import java_pecs.Product
 import java.util.*
 
-    fun main(args: Array<String>) {
+    fun main() {
         val productsSrc: MutableList<Product> = ArrayList()
         productsSrc.add(Camera())
         productsSrc.add(Phone())
@@ -20,7 +20,7 @@ import java.util.*
 
 
 internal class Helper {
-    fun copy(src: List<Product>, dest: MutableList<in Product>) {
+    fun copy(src: MutableList<out Product>, dest: MutableList<in Product>) {
         for (p in src) {
             dest.add(p)
         }
